@@ -1,0 +1,76 @@
+---
+title: "OpenIntroR"
+author: "William Han"
+date: "11/17/2021"
+output: html_document
+---
+
+
+```{r}
+library(tidyverse)
+library(openintro)
+library(janitor)
+```
+
+
+1 Hello Data
+
+```{r}
+data(stent30)
+data(stent365)
+
+stent365 |> 
+  filter(group == "treatment") |> 
+  count(outcome == "stroke") |> 
+  mutate(prop = n/sum(n))
+
+stent365 |> 
+  filter(group == "control") |> 
+  count(outcome == "stroke") |> 
+  mutate(prop = n/sum(n))
+
+```
+
+```{r}
+data("loan50")
+data("county")
+
+
+ggplot(data = county,
+       aes(x = median_edu,
+           y = median_hh_income)) +
+  geom_boxplot()
+```
+
+Question for loan50 data set:
+1. Does higher credit usage positively correlate with bigger loan amounts?
+
+Exercises (odd)
+
+1. 23 observations / 6 variables 
+
+3. a. What is the relationships between air pollutants and preterm births? Does air pollutant exposure have an association with preterm births?
+  b. The subjects are the births. There are 143,196 subjects. 
+  c. The variables of this study are levels of carbon monoxide, nitrogen dioxide, ozone, and coarse particulate matter. all numerical continous variables 
+
+5. a. the main research question of the study is what is the effect of gamification in educational activities/performance 
+  b. the subjects of the study were students. there were 365 students.
+  c. The variables in this study were gender (categorical), level of studies (categorical, ordinal), academic major (categorical), expertise in English language (ordinal, categorical, ordinal), use of personal comp or games (categorical, ordinal), 
+  
+7. a. 23.26% 
+```{r}
+10/43
+```
+b. 4.35%
+```{r}
+2/46
+```
+c. The treatment group
+d. chance
+e. explanatory - acupuncture or not
+variable - pain free or not
+
+9. a. this is an experiment because the researchers are looking at the effect of a fine on parents' behavior related to picking up their child from daycare
+b. each case is the daycare center and there are 10 daycare. 
+c. the response variable is the late pick up rate. This is a discrete numerical variable
+d. the explanatory variables are the study period (categorical,ordinal), late pick ups (discrete numerical), group (categorical), week (discrete numerical). 
