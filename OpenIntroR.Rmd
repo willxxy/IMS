@@ -13,7 +13,7 @@ library(janitor)
 ```
 
 
-1 Hello Data
+# 1 Hello Data
 
 ```{r}
 data(stent30)
@@ -74,3 +74,26 @@ variable - pain free or not
 b. each case is the daycare center and there are 10 daycare. 
 c. the response variable is the late pick up rate. This is a discrete numerical variable
 d. the explanatory variables are the study period (categorical,ordinal), late pick ups (discrete numerical), group (categorical), week (discrete numerical). 
+
+11. a. 344 cases
+b. The bill length (continuous), bill depth(continuous), flipper length (continuous), and body mass (continuous) are all numerical variables. 
+c. The islands, species, and sex of penguins are categorical. 
+
+13. Region (categorical), Private and public use (categorical), airports (numerical, discrete), private and public ownership (categorical), longitude and latitude (numerical, continuous)
+
+15. Nation (categorical), Year (numerical, discrete), number of babies (numerical, discrete)
+
+17. a. County, State, Race/Ethnicity, driver stopped or not, arrested or not, searched or not.
+b. All categorical
+c. race - explanatory variable and search rate - response variable 
+
+19. a. observational study
+b. Lucy - dog and Luna - cat
+c. Lily, Oliver
+d. Positive, as cats names get popular so does dogs.
+
+
+# Study Design
+
+
+
