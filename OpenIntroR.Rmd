@@ -93,7 +93,86 @@ c. Lily, Oliver
 d. Positive, as cats names get popular so does dogs.
 
 
-# Study Design
+# 2 Study Design
+
+Cluster or Multistage sampling are most helpful when there is a lot of case to case variability within a cluster but the clusters themselves don't look very different from one another. 
+
+Psuedoreplication occurs when individual observations under different treatments are heavily dependent on each other. 
+
+1.  a. $52 - population mean 
+       $58 - sample mean
+    b.3.37 - population mean
+      3.59 - sample mean 
+      
+3.  a. population - all births
+       sample - 143,196 births in Southern CA
+    b. If the births in this time span (1989 - 1993) and location (Southern CA) are representative of all births, then we can generalize the results to all of the births in SoCal. However, since this is a observational study, it cannot establish causal relationships. 
+    
+5. a. population - college students learning statistics
+      sample - 365 college students in a statistics course
+   b. If the 365 college students are representative of all college students studying statistics, then it can be generalized to the population. The findings can be used to establish causal relationships because it was an experimental study. 
+   
+7. a. observation
+   b. variable
+   c. sample statistic
+   d. population parameter
+
+9. a. observational
+   b. stratified sampling. Randomly sample a fixed amount of students , for example 10 students, from each section to get a sample of 40 students.
+   
+11. a. There is a positive, nonlinear, somewhat strong correlation between life expectancy and percentage of internet users.     
+    b. observational
+    c. A confounding variable may be the country's wealth. A wealthy country would most likely have the resources to provide internet to many people as well as other resources, such as better healthcare, food, and water, resulting in longer life expectancy. 
+    
+13. a. Reasonable. It is a very rare instance for a simple random sampling method to not be okay. 
+    b. Students may have different opinions across a variety of fields, so this is reasonable.  
+    c. Students of similar age probably have similar opinions. We want the clusters to be diverse with respect to the outcome of interest, so this would not be a good approach. 
+    
+15. a. 200 randomply sampled men and women.
+    b. The response variable is the people's attitudes towards the microwave oven. 
+    c. The explanatory variable is the people's attitude towards the subjects. 
+    d. Yes the study employed random sampling through using Amazon's Mechanical Turk. 
+    e. Observation study because it there was no random assignment to treatments. 
+    f. We cannot establish a causal link
+    g. If the 200 randomly sampled participants are representative of the total population, then it may be generalized. Since the study is random, we are able to generalize. 
+    
+17. a. Simple random sampling, non-response bias. People who may have a strong opinion on the subject may fill out the survey.
+    b. Convenience sampling, under coverage bias. The sample is not representative of the whole population. 
+    c. Convenience sampling, " " 
+    d. Multi-stage sampling, potential non response variable. 
+    
+19. a. response variable - exam performance     
+    b. explanatory variable - light levels. The levels are fluorescent overhead lighting, yellow overhead lighting, no overhead lighting (only desk lamps)
+    c. The blocking variables are people who wear glasses and people who don't. 
+    
+21. a. experimental study
+    b. 2 factors: Light level (fluorescent overhead lighting, yellow overhead lighting, no overhead lighting (only desk lamps) and noise (no noise, construction noise, and human chatter noise).
+    c. blocking  variable 
+    
+23. The experiment needs to be blind and randomized. I would randomly distribute one cup filled with Coke and another with Diet Coke for each classmate. The  cup filled with Coke would be labeled as (A) and the Diet Coke would be labeled as (B). 
+
+25. a. experimental 
+    b. experimental treatment: group given 25 grams of chia seeds
+    control treatment: group given placebo. 
+    c. Yes, gender
+    d. Blinding was used. The groups were blinded on the treatment that they were given. 
+    e. We can make a causal statement, but since the study was not randomized, we cannot generalize the conclusion to the population stage. 
+    
+27. a. This is an observational study, so no causal inference can be made. There is also a non response bias. There is bias in the respondents because no parent would want to say that it is difficult to spend time with kids after school. 
+    b. The 567 women cannot be generalized to the 1000 women. Not a random study. 
+    c. There is no control group. 
+    
+29. a. Experimental
+    b. Explanatory - consumption of fruits and vegetables. 
+    Response - psychological well being
+    c. The results can not be generalized because the participants were volunteers. 
+    d. The results of the study can be used to establish a causal relationship
+    e. The results of this study indicate a positive relationship in giving young adults fresh fruits and vegetables to eat and psychological well being. 
+
+
+
+
+
 
 
 
