@@ -191,6 +191,7 @@ pre code {
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
 ## 
 ##     chisq.test, fisher.test</code></pre>
+<pre class="r"><code>library(tidytuesdayR)</code></pre>
 <div id="hello-data" class="section level1">
 <h1>1 Hello Data</h1>
 <pre class="r"><code>data(stent30)
@@ -388,6 +389,32 @@ ggplot(data = county,
 <li>The results of this study indicate a positive relationship in giving young adults fresh fruits and vegetables to eat and psychological well being.</li>
 </ol></li>
 </ol>
+</div>
+<div id="applications-data" class="section level1">
+<h1>3 Applications: Data</h1>
+<pre class="r"><code>passwords &lt;- readr::read_csv(&#39;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-14/passwords.csv&#39;)</code></pre>
+<pre><code>## Rows: 507 Columns: 9</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): password, category, time_unit
+## dbl (6): rank, value, offline_crack_sec, rank_alt, strength, font_size</code></pre>
+<pre><code>## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>glimpse(passwords)</code></pre>
+<pre><code>## Rows: 507
+## Columns: 9
+## $ rank              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1…
+## $ password          &lt;chr&gt; &quot;password&quot;, &quot;123456&quot;, &quot;12345678&quot;, &quot;1234&quot;, &quot;qwerty&quot;, …
+## $ category          &lt;chr&gt; &quot;password-related&quot;, &quot;simple-alphanumeric&quot;, &quot;simple-a…
+## $ value             &lt;dbl&gt; 6.91, 18.52, 1.29, 11.11, 3.72, 1.85, 3.72, 6.91, 6.…
+## $ time_unit         &lt;chr&gt; &quot;years&quot;, &quot;minutes&quot;, &quot;days&quot;, &quot;seconds&quot;, &quot;days&quot;, &quot;minu…
+## $ offline_crack_sec &lt;dbl&gt; 2.170e+00, 1.110e-05, 1.110e-03, 1.110e-07, 3.210e-0…
+## $ rank_alt          &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1…
+## $ strength          &lt;dbl&gt; 8, 4, 4, 4, 8, 4, 8, 4, 7, 8, 8, 1, 32, 9, 9, 8, 8, …
+## $ font_size         &lt;dbl&gt; 11, 8, 8, 8, 11, 8, 11, 8, 11, 11, 11, 4, 23, 12, 12…</code></pre>
+<p>3.2 Interactive R Tutorials</p>
+<pre class="r"><code>data(&#39;hsb2&#39;)</code></pre>
 </div>
 
 

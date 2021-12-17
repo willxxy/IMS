@@ -10,6 +10,7 @@ output: html_document
 library(tidyverse)
 library(openintro)
 library(janitor)
+library(tidytuesdayR)
 ```
 
 
@@ -170,9 +171,20 @@ Psuedoreplication occurs when individual observations under different treatments
     e. The results of this study indicate a positive relationship in giving young adults fresh fruits and vegetables to eat and psychological well being. 
 
 
+# 3 Applications: Data
+
+```{r}
+passwords <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-14/passwords.csv')
+
+glimpse(passwords)
+```
 
 
+3.2 Interactive R Tutorials 
 
+```{r}
+data('hsb2')
+```
 
 
 
