@@ -11,6 +11,8 @@ library(tidyverse)
 library(openintro)
 library(janitor)
 library(tidytuesdayR)
+library(gapminder)
+library(usdata)
 ```
 
 
@@ -184,7 +186,141 @@ glimpse(passwords)
 
 ```{r}
 data('hsb2')
+
+glimpse(hsb2)
+
 ```
+
+
+```{r}
+data('email50')
+
+glimpse(email50)
+  
+nrow(email50)
+
+ncol(email50)
+```
+
+Using ?email50 I found detailed information of the following variables:
+spam - categorical
+to_multiple - categorical
+from - categorical
+cc - numerical, discrete
+sent_email - categorical
+time - categorical, ordinal
+etc. 
+
+```{r}
+hsb2 |> 
+  count(schtyp)
+```
+```{r}
+sum(3, 4)
+
+3 |> 
+  sum(4)
+```
+```{r}
+hsb2_public <- hsb2 |> 
+  filter(schtyp == 'public')
+
+hsb2_public |> 
+  count(schtyp)
+```
+```{r}
+email50_big <- email50 |> 
+  filter(number == 'big')
+
+glimpse(email50_big)
+```
+```{r}
+mean(hsb2$read)
+
+(avg_read <- mean(hsb2$read))
+```
+```{r}
+hsb2 <- hsb2 |> 
+  mutate(read_cat = if_else(read < avg_read,
+                            "below average", "at or above average"))
+
+hsb2
+```
+```{r}
+med_num_char <- median(email50$num_char)
+
+email50_updated <- email50 |> 
+  mutate(num_char_cat = if_else(num_char < med_num_char,
+                                'below median',
+                                'at or above median'))
+
+email50_updated |> 
+  count(num_char_cat)
+```
+```{r}
+email50_updated <- email50 |> 
+  mutate(number_cat = if_else(number == "none",
+                              "no",
+                              "yes"))
+
+ggplot(email50_updated, aes(x = number_cat)) +
+  geom_bar()
+```
+```{r}
+ggplot(data = hsb2, aes(x = science, y =math)) +
+  geom_point()
+```
+```{r}
+ggplot(data = hsb2, aes(x = science, y = math, color = prog)) +
+  geom_point()
+```
+```{r}
+email50 |> 
+  ggplot(aes(x = num_char, y = exclaim_mess, color = spam)) + 
+  geom_point()
+```
+
+```{r}
+gapminder
+```
+
+Not considering an important variable when studying a relationship can result in what we call a *Simpson's paradox*. This paradox illustrates the effect the omission of an explanatory variable can have on the measure of association between another explanatory variable and the response variable. 
+
+In other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other 2 variables. 
+
+```{r}
+data(ucb_admit)
+ucb_admit
+```
+
+
+```{r}
+data("county")
+
+county_noDC <- county |> 
+  filter(state != "District of Columbia") |> 
+  droplevels()
+
+
+county_srs <- county_noDC |> 
+  slice_sample(n=150)
+
+glimpse(county_srs)
+
+
+county_srs |> 
+  group_by(state) |> 
+  count()
+
+county_str <- county_noDC |> 
+  group_by(state) |> 
+  slice_sample(n=3)
+
+glimpse(county_str)
+```
+
+
+
 
 
 
