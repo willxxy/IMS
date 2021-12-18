@@ -288,10 +288,7 @@ Not considering an important variable when studying a relationship can result in
 
 In other words, the inclusion of a third variable in the analysis can change the apparent relationship between the other 2 variables. 
 
-```{r}
-data(ucb_admit)
-ucb_admit
-```
+
 
 
 ```{r}
@@ -320,7 +317,38 @@ glimpse(county_str)
 ```
 
 
+```{r}
+data("evals")
 
+evals <- evals %>%
+  mutate(cls_type = case_when(
+    cls_students <= 18                      ~ "small",
+    cls_students >= 19 & cls_students <= 59 ~ "midsize",
+    cls_students >= 60                      ~ "large"
+    )
+  )
+
+glimpse(evals)
+```
+
+```{r}
+evals <- evals |> 
+  mutate(
+    cls_type = case_when(
+      cls_students < 19 ~ 'small',
+      19 <= cls_students & cls_students <= 59 ~ 'midsize',
+      cls_students >= 60 ~ 'large'
+    )
+  )
+```
+
+```{r}
+evals |> 
+  ggplot(aes(x= bty_avg,
+             y = score,
+             color = cls_type)) +
+  geom_point()
+```
 
 
 
