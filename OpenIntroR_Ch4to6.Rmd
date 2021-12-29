@@ -1,0 +1,48 @@
+---
+title: "OpenIntroR"
+author: "William Han"
+date: "12/28/2021"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(openintro)
+library(janitor)
+library(tidytuesdayR)
+library(gapminder)
+library(usdata)
+library(knitr)
+```
+
+
+Ch 4 Exploring Categorical Data 
+
+
+```{r}
+data("loan50")
+loans <- data("loans_full_schema")
+```
+
+
+A table that summarizes data for 2 categorical variables is called a contingency table. 
+
+A bar plot is a common way to display a single categorical variable. 
+
+We can display the distributions of 2 categorical variables on a bar plot concurrently. (stacked bar plot, dodged bar pot, standardized bar plot/filled bar plot)
+
+The stacked bar plot is most useful when it’s reasonable to assign one variable as the explanatory variable and the other variable as the response, since we are effectively grouping by one variable first and then breaking it down by the others.
+
+Dodged bar plots are more agnostic in their display about which variable, if any, represents the explanatory and which the response variable. It is also easy to discern the number of cases in each of the different group combinations.
+
+The standardized stacked bar plot is helpful if the primary variable in the stacked bar plot is relatively imbalanced, e.g., the category has only a third of the observations in the category, making the simple stacked bar plot less useful for checking for an association. *The major downside of the standardized version is that we lose all sense of how many cases each of the bars represents.*
+
+A mosaic plot is a visualization technique suitable for  contingency tables that resembles a standardized stacked bar plot with the benefit that we still see the relative group sizes of the primary variables as well. 
+
+
+```{r}
+data("email")
+```
+
+
+
