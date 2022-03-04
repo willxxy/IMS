@@ -1,0 +1,103 @@
+---
+title: "MLE"
+author: "William Han"
+date: "3/3/2022"
+output: html_document
+---
+
+
+```{r}
+library(pacman)
+library(kableExtra)
+p_load(data.table, fixest, lattice, magrittr, ggplot2)
+```
+
+
+#Generate Data
+
+```{r}
+N = 500 #sample size
+
+beta = 5
+
+sigma_2 = 5 # sigma^2 (distribution of U)
+
+DT <- data.table(X = rnorm(N, 0, 5),
+                 U = rnorm(N, 0, sqrt(sigma_2))) %>%
+  .[, Y := beta*X + U]
+```
+
+#Derive the likelihood function
+
+```{r}
+#Likelihood function
+
+log_like <- function(theta, Y, X){
+  X <- as.matrix(X); Y <- as.matrix(Y);
+  N        <- nrow(X)
+  beta     <- theta[1]
+  sigma_2  <- theta[2]
+  e        <- Y - beta*X
+  loglik <- -.5*N*log(2*pi) - .5*N*log(sigma_2) - ((t(e) %*% e)/ (2*sigma_2))
+  return(-loglik)
+}  
+
+#graph likelihood function
+  
+log_like_graph <- function(beta, sigma_2){
+  X <- as.matrix(DT$X); Y <- as.matrix(DT$Y);
+  N         <- nrow(X)
+  e         <- Y - beta*X
+  loglik   <- -.5*N*log(2*pi)-.5*N*log(sigma_2) - ((t(e) %*% e)/ (2*sigma_2))
+  return(loglik)
+}
+
+log_like_graph <- Vectorize(log_like_graph)
+
+#set grid of beta and sigma2 values
+
+beta_vals <- seq(-10, 10, by = 1)
+sigma2_vals <- seq(1, 10, by =1)
+log_vals <- outer(beta_vals, sigma2_vals, log_like_graph)
+
+persp(beta_vals, sigma2_vals, log_vals, theta = 7, phi =8, r =500)
+```
+
+
+
+# Find MLE estimates
+
+```{r}
+MLE_estimates <- optim(fn = log_like,        #Likelihood function
+                       par = c(1,1),         #initial guess
+                       lower = c(-Inf, -Inf),#lower bound on param
+                       upper = c(Inf, Inf),  #upper bound on param
+                       hessian = TRUE,       #return Hessian for standard errors
+                       method = "L-BFGS-B",
+                       #custom inputs
+                       Y = DT$Y,
+                       X = DT$X)
+
+#Examine the estimates
+
+MLE_par <- MLE_estimates$par
+MLE_SE <- sqrt(diag(solve(MLE_estimates$hessian)))
+MLE <- data.table(param = c("beta", "sigma_2"),
+                  estimates = MLE_par,
+                  sd = MLE_SE)
+
+kable(MLE)
+                       
+                      
+```
+
+
+
+
+
+
+
+
+
+
+

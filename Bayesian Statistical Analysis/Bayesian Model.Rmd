@@ -1,0 +1,21 @@
+---
+title: "Bayesian Analysis"
+author: "William Han"
+date: "2/28/2022"
+output: html_document
+---
+
+
+```{r}
+library(lubridate)
+library(bsts)
+library(dplyr)
+library(ggplot2)
+library(forecast)
+```
+
+
+```{r}
+data("AirPassengers")
+```
+
